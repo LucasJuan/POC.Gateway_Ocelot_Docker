@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  teste:
+    image: ${DOCKER_REGISTRY-}teste
+    build:
+      context: .
+      dockerfile: teste/Dockerfile
+
+  poc.gateway:
+    image: ${DOCKER_REGISTRY-}pocgateway
+    build:
+      context: .
+      dockerfile: POC.Gateway/Dockerfile
+

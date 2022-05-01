@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POC.Gateway", "POC.Gateway\POC.Gateway.csproj", "{E4470C42-A5C3-4E78-8FD1-F4A2E9B32B42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "teste", "teste\teste.csproj", "{BFE34895-5289-44AA-BD28-F9BC45D6EFEA}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A608185E-3DD1-49E2-A9B4-905D67F04423}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4470C42-A5C3-4E78-8FD1-F4A2E9B32B42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4470C42-A5C3-4E78-8FD1-F4A2E9B32B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4470C42-A5C3-4E78-8FD1-F4A2E9B32B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4470C42-A5C3-4E78-8FD1-F4A2E9B32B42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFE34895-5289-44AA-BD28-F9BC45D6EFEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFE34895-5289-44AA-BD28-F9BC45D6EFEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFE34895-5289-44AA-BD28-F9BC45D6EFEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFE34895-5289-44AA-BD28-F9BC45D6EFEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A608185E-3DD1-49E2-A9B4-905D67F04423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A608185E-3DD1-49E2-A9B4-905D67F04423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A608185E-3DD1-49E2-A9B4-905D67F04423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A608185E-3DD1-49E2-A9B4-905D67F04423}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F027637-CE83-4DB4-994B-76FE7020C939}
+	EndGlobalSection
+EndGlobal

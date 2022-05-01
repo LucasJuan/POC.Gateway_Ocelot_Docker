@@ -1,0 +1,30 @@
+{
+  "GlobalConfiguration": {
+  },
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Home/{val}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2796
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/Home/{val}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Home",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2796
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/Home",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+    }
+  ]
+}
