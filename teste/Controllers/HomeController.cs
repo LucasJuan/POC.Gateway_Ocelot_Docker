@@ -18,7 +18,7 @@ namespace teste.Controllers
             int retorno = 0;
             foreach (var item in valor)
             {
-                retorno = item == id ? item : 404;
+
                 if (item == id)
                     retorno = item; break;
             }
