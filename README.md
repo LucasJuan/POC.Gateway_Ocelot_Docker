@@ -1,42 +1,51 @@
-POC.Gateway
-Esta API é apenas um exemplo de como utilizar o OCELOT como gateway para Microserviços e publicar
-Para a criação das imagens após baixado o projeto 
-- Instale o Docker Desktop em sua maquina para facilitar  a visualização dos containers e imagens
-1 Crie a API que será utilizada como Gateway
-2 Configure o Program.cs para pegar o arquivo OCELOT de acordo com o ambiente
-using POC.Gateway;
+# POC.Gateway
 
-var builder = WebApplication.CreateBuilder(args);
+This API serves as an example of how to use OCELOT as a gateway for microservices and publish.
 
-// Add services to the container.
-var startup = new Startup(builder.Configuration);
-startup.ConfigureServices(builder.Services);
+## Setting Up the Project
 
-builder.Logging.AddJsonConsole();
-builder.Configuration.AddJsonFile($"ocelot.{builder.Environment.EnvironmentName}.json", false, true);
+1. Install Docker Desktop on your machine to facilitate the visualization of containers and images.
 
-var app = builder.Build();
+2. Create the API that will be used as the gateway.
 
-startup.Configure(app, app.Environment);
+3. Configure the `Program.cs` file to fetch the OCELOT file according to the environment:
 
-3 Crie 3 arquivos ocelot.json um será o development e outro Local no Development adicione as configurações e a porta em, não se esqueça de colocar o nome do container que será usado no HOST
+    ```csharp
+    using POC.Gateway;
 
-4 na Local utilize Localhost, vc pode utilizar a porta que te parece melhor exemplo 8001... para cada api que será configurada a porta de acesso.
+    var builder = WebApplication.CreateBuilder(args);
 
-5 adicione o DockerFile com a inclusão do Composer, clicando com o botão direito do mouse na API em seguida adicionar > Orquestrador de Container... Faça isso apra todas as API'S
+    // Add services to the container.
+    var startup = new Startup(builder.Configuration);
+    startup.ConfigureServices(builder.Services);
 
-6 Configure o Arquivo DcokerFile conforme o exemplo aqui disposto..
+    builder.Logging.AddJsonConsole();
+    builder.Configuration.AddJsonFile($"ocelot.{builder.Environment.EnvironmentName}.json", false, true);
 
-7 Configure o arquivo Docker-compose.override.yml conforme disposto no exemplo indicando a porta e informando ao gateway que ele depende das demais imagens da API criada, caso tenha um banco de dados que precisa ser disposto deverá fazer o mesmo.
+    var app = builder.Build();
 
-8 Execute o comando para criar as imagens.
-Docker-compose -f docker-compose.yml .\docker-compose.override.yml up -d
+    startup.Configure(app, app.Environment);
+    ```
 
-__________________
-Alguns comandos que podem te ajudar:
-docker images = verifica as imagens
-docker ps
-docker container ls -a = lista os container
-docker container rm [nome do container] = remove o container
-docker run -it -d -p 8080:80 [nome da imagem] = Cria o container da imagem na porta que eu quero
+4. Create three OCELOT configuration files: one for development, one for local, and another for production. In the development file, add configurations and the port. Don't forget to specify the container name used in the host.
 
+5. Use "localhost" in the local file, and you can use the port that suits you best (e.g., 8001) for each API that will be configured for access.
+
+6. Add the DockerFile with the inclusion of the Composer by right-clicking on the API and selecting "Add > Container Orchestrator..." Do this for all APIs.
+
+7. Configure the DockerFile according to the example provided.
+
+8. Configure the Docker-compose.override.yml file as indicated in the example, specifying the port and informing the gateway that it depends on the other API images created. If there is a database that needs to be provisioned, do the same.
+
+9. Execute the command to create the images.
+
+    ```bash
+    docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+    ```
+
+## Useful Docker Commands
+
+- `docker images`: Verify the images.
+- `docker ps` or `docker container ls -a`: List the containers.
+- `docker container rm [container name]`: Remove the container.
+- `docker run -it -d -p 8080:80 [image name]`: Create the container from the image on the desired port.
